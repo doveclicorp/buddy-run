@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BuddyRun · Privacy Policy</title>
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+  <a class="back-link" href="index.html">← BuddyRun</a>
+  <a class="lang-switch" href="privacy.html">한국어</a>
+
+  <article class="legal">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective: 2026-05-04 · Last updated: 2026-05-04</p>
+
+    <p>Arasaco ("we", "the company") respects your privacy. This policy explains what information BuddyRun ("the app") — the mobile application operated by the company — collects, how it is used, where it is stored, and how it is protected.</p>
+
+    <h2>1. Information We Collect</h2>
+
+    <h3>1.1 Automatically Collected</h3>
+    <ul>
+      <li><strong>Lock session data</strong>: start/end time, duration, success/failure, virtual marathon distance, user-entered notes — <em>stored on-device only</em>. The virtual marathon distance is derived by multiplying elapsed lock time by a fixed speed; it is purely a visualization metric. The app does NOT use GPS, motion sensors, or any actual location data.</li>
+      <li><strong>Lock schedules</strong>: recurring lock plans you create (name, weekdays, start/end time, enabled state) — <em>stored on-device only</em></li>
+      <li><strong>Installed app list</strong>: shown so you can pick "allowed apps". Never transmitted off-device</li>
+      <li><strong>App usage stats</strong>: read via Android Usage Stats API to detect blocked apps during a lock challenge. Never transmitted off-device</li>
+    </ul>
+
+    <h3>1.2 NOT Collected</h3>
+    <ul>
+      <li>Personally identifiable info (name, email, phone)</li>
+      <li>Location (GPS, IP geolocation)</li>
+      <li>Contacts, call logs, messages</li>
+      <li>Microphone, camera, photos</li>
+      <li>Financial information</li>
+    </ul>
+
+    <h2>2. Purpose of Use</h2>
+    <ul>
+      <li>Provide the lock-challenge feature (start, maintain, end)</li>
+      <li>Show your past lock history on the stats page</li>
+      <li>Trigger scheduled locks at the configured time</li>
+    </ul>
+
+    <h2>3. Storage Location and Retention</h2>
+    <p>All data is stored exclusively on the user's device. Nothing is transmitted to any external server.</p>
+    <table>
+      <thead>
+        <tr><th>Data</th><th>Storage Location (on-device)</th><th>Retention</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lock session records (time, duration, success, virtual distance, notes)</td><td>SQLite database</td><td>Until you delete the app or clear data</td></tr>
+        <tr><td>Lock schedules, allowed apps list</td><td>SQLite database</td><td>Until you delete the app or clear data</td></tr>
+        <tr><td>Schedule alarm metadata + reboot-recovery state (whether a lock is currently active, snapshot of allowed packages)</td><td>Native SharedPreferences (app-private)</td><td>Cleaned up automatically when the schedule/lock ends or when the app is uninstalled</td></tr>
+        <tr><td>User settings (theme, language, character, hat, palette, onboarding-completed flag)</td><td>Flutter SharedPreferences (app-private)</td><td>Deleted with the app</td></tr>
+      </tbody>
+    </table>
+    <p>Both the SQLite database file and the SharedPreferences directories are sandboxed by Android into the app-private storage area; no other app can read them (except on rooted devices).</p>
+
+    <h2>4. Third-Party Sharing and Processors</h2>
+    <p>We do not sell, share, or hand off your personal data to any third party. The app does not contact any analytics SDK, advertising SDK, or external server; all data stays on your device.</p>
+    <p>If a third-party processor is introduced in a future update (e.g., crash analytics, advertising, cloud backup), this policy will be updated and announced in the app or on this page at least 30 days before the change takes effect.</p>
+
+    <h2>5. Permissions Used</h2>
+    <ul>
+      <li><strong>Display over other apps (SYSTEM_ALERT_WINDOW)</strong>: Show the lock screen during a challenge</li>
+      <li><strong>Usage access (PACKAGE_USAGE_STATS)</strong>: Detect blocked apps during a lock</li>
+      <li><strong>Query installed apps (QUERY_ALL_PACKAGES)</strong>: Show app list for allowed-apps selection</li>
+      <li><strong>Reorder tasks (REORDER_TASKS)</strong>: Bring the lock screen back to the foreground when a non-allowed app surfaces during a lock</li>
+      <li><strong>Exact alarms (SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM)</strong>: Start scheduled locks precisely at the configured time</li>
+      <li><strong>Foreground service (FOREGROUND_SERVICE_SPECIAL_USE)</strong>: Maintain the lock until the user-set end time</li>
+      <li><strong>Notifications (POST_NOTIFICATIONS)</strong>: Show lock progress notifications</li>
+      <li><strong>Boot completed (RECEIVE_BOOT_COMPLETED)</strong>: Restore scheduled locks after a reboot</li>
+    </ul>
+
+    <h2>6. Your Rights</h2>
+    <p>You may at any time:</p>
+    <ul>
+      <li>Delete all data in the app: uninstalling the app removes every lock record, note, and setting stored on the device. Because no external backup exists, deletion is irreversible.</li>
+      <li>Contact us with any privacy questions: see below</li>
+    </ul>
+
+    <h2>7. Children's Privacy</h2>
+    <p>This app is not directed at children under 14 and we do not knowingly collect data from children. Parents who become aware of such use should contact us at the email below for immediate deletion.</p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>If we change this policy, we will notify users at least 7 days before the effective date via in-app notice or this page. Material changes will be announced 30 days in advance.</p>
+
+    <h2>9. Business Details &amp; Contact</h2>
+    <ul>
+      <li>Business name: Arasaco</li>
+      <li>Representative: Kim Sangwoo</li>
+      <li>Business registration number: 505-52-01124 (Republic of Korea)</li>
+      <li>Email: <a href="mailto:hardyjumpit@gmail.com">hardyjumpit@gmail.com</a></li>
+    </ul>
+  </article>
+
+  <footer>
+    <p>© 2026 Arasaco · BuddyRun</p>
+  </footer>
+</main>
+</body>
+</html>
